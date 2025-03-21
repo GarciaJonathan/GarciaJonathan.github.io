@@ -1,0 +1,85 @@
+:root {
+    --black: #303030;
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 97%;
+    background-color: white;
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 90px;
+    margin-bottom: 4%;
+    color: var(--black);
+}
+
+p {
+    color:grey;
+}
+
+@keyframes go-up {
+    0% {top:40px;opacity: 0%;}
+    100% {top:0px;opacity: 100%;}
+}
+
+@keyframes go-right {
+    0% {right:40px; opacity: 0%;}
+    100% {right:0px; opacity: 100%;}
+}
+
+.presentation {
+    margin-top: 9%;
+    margin-left: 7%;
+}
+
+.goup {
+    animation-name: go-up;
+    animation-duration: 1.5s;
+    position: relative;
+}
+
+.goright {
+    animation-name: go-right;
+    animation-duration: 1.5s;
+    position: relative;
+}
+
+.rocket {
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+}
+
+button {
+    padding:15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 8px;
+    margin-top:20px;
+    font-size: 15px;
+    border: 0px;
+    background-color: rgb(151, 127, 196);
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(167, 167, 167);
+    border: 2px;
+    border-color: blueviolet;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 25;
+}
+
+a, a:hover {
+    color: var(--black);
+}
