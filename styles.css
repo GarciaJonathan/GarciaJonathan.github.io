@@ -27,7 +27,8 @@ h1 {
     }
     h1 {
         margin-top: 20%;
-        font-size: 140px;
+        font-size: 110px;
+        margin-bottom: 5%;
     }
   }
 
@@ -246,6 +247,7 @@ button:hover {
 
 @media screen and (max-width: 1200px) {
     .greetingsvg {
+        margin-top: 10%;
         width: 700px; 
         height: 700px; 
     }
@@ -281,10 +283,6 @@ button:hover {
   }
 
   @media screen and (max-width: 1200px) {
-    .greetingsvg {
-        width: 700px; 
-        height: 700px; 
-    }
     .skillicon img {
         width: 80px;
         height: 80px;
