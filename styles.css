@@ -99,7 +99,6 @@ button {
     border: 0px;
     background-color: rgb(151, 127, 196);
     color: white;
-    font-weight: bold;
 }
 
 @media screen and (max-width: 1200px) {
