@@ -18,10 +18,10 @@ h1 {
 
 @media screen and (max-width: 1200px) {
     body {
-        font-size: 35px;
+        font-size: 45px;
     }
     h1 {
-        font-size: 120px;
+        font-size: 140px;
     }
   }
 
