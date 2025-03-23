@@ -16,7 +16,7 @@ h1 {
     color: var(--black);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     body {
         font-size: 35px;
     }
