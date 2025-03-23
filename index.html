@@ -3,30 +3,72 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href=styles.css rel="stylesheet">
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="index.js"></script>
+
 </head>
+
 <html>
     <body>
-        <div class="presentation">
-            <div class="row justify-content-start">
-                <div class="col-sm-12 col-lg-8 col-xl-7">
-                    <div class="goright"><h1>Hi, I'm Jona</h1></div>
-                    <div class="goup">
-                        <p>Web developer and 3D artist. Lorem ipsum dolor sit amet, 
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                            quis nostrud exercitation ullamco laboris.</p>
-                        <div class = "row justify-content-start buttons">
-                            <div class="col-md-12 col-xl-8"><a href="">garciasanchezjona@gmail.com</a></div>
-                            <div class="col-md-12 col-xl-4"><button>DOWNLOAD MY CV</button></div>
-                        </div>
+        <div class="card">
+            <div>
+                <div class="row">
+                    <div class="maincard col-sm-12 col-lg-8 col-xl-7">
+                            <div class="goright"><h1>Hi, I'm Jona</h1></div>
+                            <div class="goup">
+                                <p>Web developer and 3D artist. Lorem ipsum dolor sit amet, 
+                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                    quis nostrud exercitation ullamco laboris.</p>
+                                
+                                <div class="icons-container">
+                                    <div class="icon-link">
+                                        <img src="images/linkedin.svg">
+                                        <a class="icontext">LinkedIn</a>
+                                    </div>
+                                    <div class="icon-link">
+                                        <img src="images/github.svg">
+                                        <div class="icontext">GitHub</div>
+                                    </div>
+                                    <div class="icon-link">
+                                        <img src="images/artstation.svg">
+                                        <div class="icontext">Artstation</div>
+                                    </div>
+                                </div>
+                                
+                                <div class = "buttons row justify-content-start">
+                                    <div class="col-md-12 col-xl-8"><a href="">garciasanchezjona@gmail.com</a></div>
+                                    <div class="col-md-12 col-xl-4"><a href="JonathanGarcia_CV.pdf" target="_blank"><button>DOWNLOAD MY CV</button></a></div>
+                                </div>
+                            </div>
                     </div>
-                </div>
-                <div class="rocket col-sm-12 col-lg-4 col-xl-5">
-                    <dotlottie-player src="https://lottie.host/9615a899-f2a9-412d-a966-5e1f57fbe41d/ck1DDY019d.lottie" background="transparent" speed="0.5" style="width: 600px; height: 600px" loop autoplay></dotlottie-player>
+                    <div class="secondarycard col-sm-12 col-lg-4 col-xl-5">
+                        <dotlottie-player src="https://lottie.host/9615a899-f2a9-412d-a966-5e1f57fbe41d/ck1DDY019d.lottie" background="transparent" speed="0.5" style="width: 600px; height: 600px; margin-left: -17%" loop autoplay></dotlottie-player>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
+        <div class="card" style="background-color: rgb(151, 127, 196);">
+            <div>
+                <div class="row">
+                    <div class="secondarycard col-sm-12 col-lg-4 col-xl-5">
+                        <dotlottie-player src="https://lottie.host/63a07c91-fc63-4511-b175-09f9e42f8cf3/uJZFOpSn2B.lottie" background="transparent" speed="1" style="width: 400px; height: 400px; margin-left: 17%" loop autoplay></dotlottie-player>
+                    </div>
+                    <div class="maincard col-sm-12 col-lg-8 col-xl-7">
+                        <div class="goright"><h1>About me</h1></div>
+                        <div class="goup">
+                            <p class="p-right">Web developer and 3D artist. Lorem ipsum dolor sit amet, 
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                quis nostrud exercitation ullamco laboris.</p>
+                            <div class = "row justify-content-start buttons">
+                        
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </body>
 </html>

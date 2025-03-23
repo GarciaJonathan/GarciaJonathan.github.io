@@ -4,9 +4,10 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    width: 97%;
     background-color: white;
-    font-size: 30px;
+    font-size: 25px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -15,17 +16,60 @@ h1 {
     color: var(--black);
 }
 
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 35px;
+    }
+    h1 {
+        font-size: 120px;
+    }
+  }
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.card {
+    height: 100vh;
+    width: 100vw;
+    border: 0px;
+    scroll-snap-align: start;
+}
+
+.maincard {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center; 
+    justify-items: center;
+    padding:0%;
+    padding-left: 7%; 
+    padding-right: 5%; 
+}
+
+.secondarycard {
+    display: flex;
+    justify-content: center;
+    padding:0%;
+    padding-top: 11%;
+}
+
 p {
     color:grey;
 }
 
+.p-right {
+    color: rgb(231, 231, 231);
+    padding-right: 5%;
+}
+
 @keyframes go-up {
-    0% {top:40px;opacity: 0%;}
+    0% {top:50px;opacity: 0%;}
     100% {top:0px;opacity: 100%;}
 }
 
 @keyframes go-right {
-    0% {right:40px; opacity: 0%;}
+    0% {right:50px; opacity: 0%;}
     100% {right:0px; opacity: 100%;}
 }
 
@@ -36,20 +80,14 @@ p {
 
 .goup {
     animation-name: go-up;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     position: relative;
 }
 
 .goright {
     animation-name: go-right;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     position: relative;
-}
-
-.rocket {
-    display: flex;
-    justify-content: center;
-    padding-top: 4%;
 }
 
 button {
@@ -57,7 +95,6 @@ button {
     padding-right: 20px;
     padding-left: 20px;
     border-radius: 8px;
-    margin-top:20px;
     font-size: 15px;
     border: 0px;
     background-color: rgb(151, 127, 196);
@@ -78,8 +115,51 @@ button:hover {
     justify-content: left;
     align-items: center;
     font-size: 25;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-a, a:hover {
+.buttons a, a:hover {
     color: var(--black);
 }
+
+.icons-container {
+    display: flex;
+    align-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.icon-link {
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    width: 150px;
+}
+
+.icon-link img {
+    height: 40px;
+    width: 40px;
+    z-index: 1;
+}
+
+@keyframes icontextout {
+    0% {left:150px;}
+    100% {left:0px;}
+}
+
+@keyframes icontextin {
+    0% {left:0px;}
+    100% {left:150px;}
+}
+
+.icontext {
+    animation-name: icontextin;
+    animation-duration: 0.2s;
+    position: relative;
+    margin-left: -150px;
+    padding-left: 5px;
+}
+
+
