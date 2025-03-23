@@ -38,7 +38,6 @@ html {
 
 .maincard {
     display: flex;
-    height: 100vh;
     flex-direction: column;
     justify-content: center; 
     justify-items: center;
@@ -158,19 +157,19 @@ button:hover {
         width: 300px;
     }
     .icon-link img {
-        height: 150px;
-        width: 150px;
+        height: 120px;
+        width: 120px;
     }
   }
 
 @keyframes icontextout {
-    0% {left:150px;}
+    0% {left:200px;}
     100% {left:0px;}
 }
 
 @keyframes icontextin {
     0% {left:0px;}
-    100% {left:150px;}
+    100% {left:200px;}
 }
 
 .icontext {

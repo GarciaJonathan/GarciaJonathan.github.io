@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         icontextin.parentElement.children[0].onmouseout = () => {
-            icontextin.style.marginLeft = '-150px';
+            icontextin.style.marginLeft = '-200px';
             icontextin.style.animationName = 'icontextout';
             icontextin.style.animationDuration = '0.2s';
             icontextin.style.animationPlayState = 'running';
             icontextin.addEventListener('animationend', () => {
-                icontextin.style.marginLeft = '-150px';
+                icontextin.style.marginLeft = '-200px';
             });
         }
 
