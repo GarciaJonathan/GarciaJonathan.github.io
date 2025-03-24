@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             icontextin.style.animationDuration = '0.2s';
             icontextin.style.animationPlayState = 'running';
             icontextin.addEventListener('animationend', () => {
-                icontextin.style.width = '110px';
+                icontextin.style.width = '120px';
             });
         }
 
