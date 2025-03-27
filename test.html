@@ -1,52 +1,269 @@
 <!DOCTYPE html>
 <head>
     <style>
-        body, html {
-        scroll-snap-type: proximity;
-        scroll-snap-points-y: repeat(100vh);
-        scroll-snap-type: y mandatory;
-        }
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline-offset: 3px;
+}
 
-        section {
-        height: 100vh;
-        }
+*:focus {
+  outline: 3px solid #000000;
+}
 
-        .row section {
-        scroll-snap-align: start;
-        }
+body {
+  margin: 0;
+  color: #000000;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 24px;
+  min-height: 100vh;
+  background: #ffffff;
+}
 
-        .one {
-        background-color: red;
-        }
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+}
 
-        .two {
-        background-color: blue;
-        }
+section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+}
 
-        .three {
-        background-color: grey;
-        }
+@media screen and (max-width: 768px) {
+  section {
+    padding: 25px;
+  }
+}
 
-        .four {
-        background-color: green;
-        }
+section:nth-child(2n) {
+  background: #edf7f5;
+}
+
+.panels section {
+  background: #d6e8e5;
+  min-height: 100%;
+}
+
+.panels section:nth-child(2) {
+  min-height: calc(100% + 200px);
+}
+
+.panels section:nth-child(2n) {
+  background: #c2d6d2;
+}
+
+.panels.horizontal {
+  display: flex;
+}
+
+.panels.horizontal section {
+  min-height: 0;
+  min-width: 100%;
+}
+
+.panels.horizontal section:nth-child(2) {
+  min-width: calc(100% + 200px);
+}
+
+section .explanation,
+section pre {
+  background: #edf7f5;
+}
+
+section:nth-child(2n) .explanation,
+section:nth-child(2n) pre {
+  background: #ffffff;
+}
+
+section.introduction {
+  align-items: center;
+  justify-content: center;
+}
+
+section.introduction .center {
+  text-align: center;
+}
+
+section.introduction .center p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+}
+
+section.introduction .center p a {
+  word-break: break-all;
+}
+
+section.introduction .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50px;
+
+  text-align: center;
+  font-size: 60%;
+}
+
+section.introduction .bottom:after {
+  display: block;
+  margin: 1em auto 0;
+  height: 20px;
+  width: 20px;
+
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  content: '';
+
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+section.options,
+section.options_explained {
+  min-height: 100vh;
+  height: auto;
+}
+
+h1 {
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 300%;
+  margin: 0 0 25px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 200%;
+  }
+}
+
+h2 {
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.group {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -25px;
+}
+
+.group > * {
+  margin: 25px;
+}
+
+.panels,
+pre {
+  flex-grow: 99999;
+  flex-basis: 300px;
+}
+
+.panels {
+  overflow: auto;
+}
+
+.explanation,
+pre {
+  margin: 0;
+  overflow-x: auto;
+  padding: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .explanation,
+  pre {
+    padding: 25px;
+  }
+}
+
+.explanation dt,
+pre {
+  font-size: 80%;
+  font-family: Ubunutu Mono, monospace;
+}
+
+.explanation {
+  flex-grow: 1;
+}
+
+.explanation dt:after {
+  content: ':';
+}
+
+.explanation dd {
+  margin: 0 0 0 10px;
+}
+
+.explanation dd + dt {
+  margin: 25px 0 0;
+}
+
+.aside {
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+.aside > *:first-child {
+  margin-top: 0;
+}
+
+.aside > *:last-child {
+  margin-bottom: 0;
+}
     </style>
 </head>
-<html>
-    <body>
-        <div class="row">
-            <section class="one">
-            </section>
-            <section class="two">
-            </section>
-            <section class="three">
-            </section>
-            <section class="four">
-            </section>
-          </div>
-          <section>
-            <h2>This will not have sticky</h2>
-          </section>
-        
-    </body>
+
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>PanelSnap - basic demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/panelsnap@1.3.0/lib/panelsnap.umd.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new PanelSnap();
+        });
+    </script>
+
+    <style>
+      section:nth-child(2) {
+        min-height: calc(100vh + 200px);
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>First</h1>
+    </section>
+    <section>
+      <h1>Second</h1>
+    </section>
+    <section>
+      <h1>Third</h1>
+    </section>
+  </body>
 </html>
