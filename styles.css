@@ -319,4 +319,6 @@ a, a:hover {
   }
 
 
-  
+  #cv {
+    display: none
+  }
