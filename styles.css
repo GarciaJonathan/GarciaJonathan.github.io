@@ -73,25 +73,29 @@ button:hover {
 }
 
 .card {
-    margin: 2rem;
+    margin: 1.3rem;
+    margin-left: 0;
+    margin-right: 0;
     object-fit: cover;
-    height: 400px;
+    height: 500px;
+    
 }
 
 .project-image {
-    height: 400px;
+    height: 500px;
     padding: 0;
 }
 
 @media screen and (min-width: 1200px) {
     .card {
-    max-width: 540px;
-    height: 300px;
-  }
+        margin: 2rem;
+        max-width: 540px;
+        height: 300px;
+    }
   .project-image {
-    height: 300px;
-    padding: 0;
-}
+        height: 300px;
+        padding: 0;
+    }
 }
 
 .project-image img {
@@ -144,6 +148,11 @@ a, a:hover {
     padding:0;
     padding-left: 12%; 
     padding-right: 10%;
+}
+
+.projects {
+    padding-left: 6%; 
+    padding-right: 6%;
 }
 
 @media screen and (min-width: 1200px) {

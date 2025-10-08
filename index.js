@@ -57,8 +57,8 @@ const json =
     },
 
     "Cat":{
-        "greeting": "Hola, em dic Jona",
-        "description": "Desenvolupador web i artista 3D, atrapat entre tecnologia i art. Sempre que veig gossets pel carrer els saludo.",
+        "greeting": "Ei, s&oacute;c en Jona",
+        "description": "Desenvolupador web i artista 3D, atrapat entre tecnologia i art. Sempre saludo els gossets que veig pel carrer.",
         "cv-button": "DESCARREGA CV",
         "skills": "Habilitats",
         "stack": "Tecnologies",
