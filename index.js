@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    var options = {
+
+  var options = {
         container: document.body,
         panelSelector: '> section',
         directionThreshold: 10,
@@ -34,7 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 500,
         easing: function(t) { return t },
     };
+  
+  if (window.matchMedia("(min-width: 1200px)").matches) { // If media query matches
     new PanelSnap(options);
+  } 
+    
 });
 
 const json =
@@ -46,7 +51,9 @@ const json =
         "skills": "Skills",
         "stack": "Stack",
         "projects": "Projects",
-        "experience": "Experience"
+        "experience": "Experience",
+        "project1-description": "Ai Chatbot for language learning",
+        "project2-description": "Collection of 3D projects"
     },
 
     "Cat":{
@@ -56,7 +63,9 @@ const json =
         "skills": "Habilitats",
         "stack": "Tecnologies",
         "projects": "Projectes",
-        "experience": "Experiencia"
+        "experience": "Experiencia",
+        "project1-description": "Bot de xat per aprendre idiomes",
+        "project2-description": "Col&sdot;lecci&oacute; de projectes 3D"
     }
     
 };
