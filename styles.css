@@ -146,21 +146,22 @@ a, a:hover {
     justify-content: center; 
     justify-items: center;
     padding:0;
-    padding-left: 12%; 
-    padding-right: 10%;
+    padding-right: 0;
+    padding-left: 0;
+    height: 100vh;
 }
 
-.projects {
-    padding-left: 6%; 
-    padding-right: 6%;
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .maincard {
-        padding-right: 0;
-        padding-left: 0%;
-        height: 100vh;
-        
+        padding-left: 12%; 
+        padding-right: 10%;        
+    }
+  }
+
+@media screen and (max-width: 1200px) {
+    .projects {
+        padding-left: 6%; 
+        padding-right: 6%;
     }
   }
 
