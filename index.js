@@ -93,143 +93,139 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // smooth scroll from https://github.com/whizkydee/olaolu.dev/blob/master/landing/src/helpers.js
 
-function smoothScroll(scrollTargetY, speed = 1000) {
-    let currentTime = 0
-    const scrollY = pageYOffset || document.documentElement.scrollTop
-    const derivedSpeed = speed
-  
-    // min time .1, max time .8 seconds
-    const time = Math.max(
-      0.1,
-      Math.min(Math.abs(scrollY - scrollTargetY) / derivedSpeed, 0.8)
-    )
-  
-    // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
-    const easeInOutCubic = pos => {
-      if ((pos /= 0.5) < 1) return 0.5 * Math.pow(pos, 3)
-      return 0.5 * (Math.pow(pos - 2, 3) + 2)
-    }
-  
-    function runAnimation() {
-      currentTime += 1 / 60
-  
-      let p = currentTime / time
-      let t = easeInOutCubic(p)
-  
-      if (p < 1) {
-        requestAnimationFrame(runAnimation)
-  
-        scrollTo(0, scrollY + (scrollTargetY - scrollY) * t)
-      } else {
-        scrollTo(0, scrollTargetY)
+//  dot nav by https://www.cssscript.com/one-page-scroll-dot-nav/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dotNav = (elem, easing) => {
+      function scrollIt(destination, duration = 200, easing = 'linear', callback) {
+          const easings = {
+              linear(t) { return t; },
+              easeInQuad(t) { return t * t; },
+              easeOutQuad(t) { return t * (2 - t); },
+              easeInOutQuad(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; },
+              easeInCubic(t) { return t * t * t; },
+              easeOutCubic(t) { return (--t) * t * t + 1; },
+              easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1; },
+              easeInQuart(t) { return t * t * t * t; },
+              easeOutQuart(t) { return 1 - (--t) * t * t * t; },
+              easeInOutQuart(t) { return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t; },
+              easeInQuint(t) { return t * t * t * t * t; },
+              easeOutQuint(t) { return 1 + (--t) * t * t * t * t; },
+              easeInOutQuint(t) { return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t; }
+          };
+          const start = window.pageYOffset;
+          const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+          const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+          const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+          const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+          if ('requestAnimationFrame' in window === false) {
+              window.scroll(0, destinationOffsetToScroll);
+              if (callback) {
+                  callback();
+              }
+              return;
+          }
+          function scroll() {
+              const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+              const time = Math.min(1, ((now - startTime) / duration));
+              const timeFunction = easings[easing](time);
+              window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+              if (window.pageYOffset === destinationOffsetToScroll) {
+                  if (callback) {
+                      callback();
+                  }
+                  return;
+              }
+              requestAnimationFrame(scroll);
+          }
+          scroll();
       }
-    }
-  
-    runAnimation()
-  }
 
-  function goToSection(store, opts) {
-    let { node: sectionNode, modifier, smooth = true, focus = true } = opts
-  
-    if (!sectionNode) return
-    const sections = getSections()
-    const app = document.getElementById('app')
-  
-    const getSectionId = () => sectionNode.dataset.section
-    const curSectionIndex = sections.findIndex(({ dataset }) => {
-      return dataset.section === getSectionId()
-    })
-  
-    const findSection = (idx = 0) => sections[curSectionIndex + idx]
-    // determine what section to go to based on the modifier.
-    if (modifier == 'next') {
-      sectionNode = findSection(1)
-    } else if (modifier == 'previous') {
-      sectionNode = findSection(-1)
-    }
-  
-    if (!sectionNode) return
-    setTimeout(() => {
-      // Add a `scrolled` className so we know not to
-      // animate all the items in the section again.
-      sectionNode.classList.add('scrolled')
-    }, 1000)
-  
-    if (smooth) smoothScroll(sectionNode.offsetTop)
-    else scrollTo(0, sectionNode.offsetTop)
-  
-    setTimeout(() => {
-      store && store.commit(CURRENT_SECTION, getSectionId())
-      app.dataset[CURRENT_SECTION] = getSectionId()
-  
-      if (focus) {
-        // If there's a focusable node in the current section,
-        // bring focus to that node, otherwise, restore focus to the navigation.
-        const navigationEl = document.getElementById(NAVIGATION_ID)
-        const nodeToFocus = !getFirstFocusableNode(sectionNode)
-          ? getFirstFocusableNode(navigationEl)
-          : sectionNode
-  
-        if (nodeToFocus === null) return
-        nodeToFocus.focus()
+      //  in viewport
+
+      const inViewport = (el) => {
+          let allElements = document.getElementsByTagName(el);
+          let windowHeight = window.innerHeight;
+          const elems = () => {
+              for (let i = 0; i < allElements.length; i++) {  //  loop through the sections
+                  let viewportOffset = allElements[i].getBoundingClientRect();  //  returns the size of an element and its position relative to the viewport
+                  let top = viewportOffset.top;  //  get the offset top
+                  if(top < windowHeight){  //  if the top offset is less than the window height
+                      allElements[i].classList.add('in-viewport');  //  add the class
+                  } else{
+                      allElements[i].classList.remove('in-viewport');  //  remove the class
+                  }
+              }
+          }
+          elems();
+          window.addEventListener('scroll', elems);
       }
-    }, 200)
-  }
-  
-  const [getSections] = [
-    () => Array.from(document.querySelectorAll(SECTION_SELECTOR)),
-  ]
+      inViewport('section');
 
-  /**
-     * Configurable fn to scroll to a section - accepts a node
-     * Default opts: `{ smooth: true, focus: true }`.
-     * Toggle the values to disable/enable smooth scrolling
-     * and focusing the section on arrival respectively.
-     * @return {void}
-     */
-  function goToSection(...args) {
-    if (this.isMediumScreen) return // don't call rAF on medium screens
-    return GoToSection(this.$store, ...args)
+      //  dot nav
+
+      const allSecs = document.getElementsByTagName(elem);
+      const nav = document.getElementById('dot-nav');
+      const scrollSpeed = '1000';
+      let allVis = document.getElementsByClassName('in-viewport'),
+          allDots;
+      for (let i = 0; i < allSecs.length; i++) {
+          allSecs[i].classList.add('section-' + i);
+      }
+
+      //  add the dots
+
+      const buildNav = () => {
+          for (let i = 0; i < allSecs.length; i++) {
+              const dotCreate = document.createElement('a');
+              dotCreate.id = 'dot-' + i;
+              dotCreate.classList.add('dots');
+              dotCreate.href = '#';
+              dotCreate.setAttribute('data-sec', i);
+              nav.appendChild(dotCreate);
+          }
+      }
+      buildNav();
+
+      //  nav position
+
+      let navHeight = document.getElementById('dot-nav').clientHeight;
+      let hNavHeight = navHeight / 2;
+      document.getElementById('dot-nav').style.top = 'calc(50% - ' + hNavHeight + 'px)';
+
+      //  onscroll
+
+      const dotActive = () => {
+          allVis = document.getElementsByClassName('in-viewport');
+          allDots = document.getElementsByClassName('dots');
+          visNum = allVis.length;
+          let a = visNum - 1;
+          for (let i = 0; i < allSecs.length; i++) {
+              allDots[i].classList.remove('active');
+          }
+          document.getElementById('dot-' + a).classList.add('active');
+      }
+      dotActive();
+      window.onscroll = function(){ dotActive(); };
+
+      //  click stuff
+
+      const scrollMe = (e) => {
+          let anchor = e.currentTarget.dataset.sec;
+          scrollIt(document.querySelector('.section-' + anchor), scrollSpeed, easing);
+          e.preventDefault();
+      }
+
+      allDots = document.getElementsByClassName('dots');
+      for (let i = 0; i < allDots.length; i++) {
+          allDots[i].addEventListener('click', scrollMe);
+      }
+
   }
 
-  /**
-   * Recalculate position of the current section
-   * then adjust based on that information.
-   * @return {void}
-   */
-  function recalcSection() {
-    const currentSection = this.getSection()
-    this.goToSection({ node: currentSection, smooth: false })
-  }
+  dotNav('section', 'easeInOutQuad');
 
-  /**
-   * Go to the section after the current one.
-   * @return {void}
-   */
-  function goToNextSection() {
-    goToSection({ modifier: 'next', node: this.getSection() })
-  }
+});
 
-  /**
-   * Go to the section before the current one.
-   * @return {void}
-   */
-  function goToPrevSection() {
-    goToSection({ modifier: 'previous', node: this.getSection() })
-  }
 
-  /**
-   * Jump to the absolute first section on the page.
-   * @return {void}
-   */
-  function goToFirstSection() {
-    goToSection({ node: this.getSection(this.firstSection) })
-  }
-
-  /**
-   * Jump to the absolute last section on the page.
-   * @return {void}
-   */
-  function goToLastSection() {
-    goToSection({ node: this.getSection(this.lastSection) })
-  }
