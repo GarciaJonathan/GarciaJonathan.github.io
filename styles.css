@@ -92,7 +92,7 @@ button:hover {
         max-width: 540px;
         height: 300px;
     }
-  .project-image {
+    .project-image {
         height: 300px;
         padding: 0;
     }
@@ -123,7 +123,12 @@ a, a:hover {
 .canvas {
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    justify-items: center;
     min-height: 100vh;
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -140,35 +145,34 @@ a, a:hover {
     background-color: var(--color-main);
 }
 
-.maincard {
+.covercard {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    justify-items: center;
-    padding:0;
-    padding-left: 12%; 
-    padding-right: 10%;
+    justify-content: center;
+    padding: 0;
+    min-height: 100vh;
 }
 
-.projects {
-    padding-left: 6%; 
-    padding-right: 6%;
+.maincard {
+    padding: 0;
+    padding-top: 7%;
+    min-height: 100vh;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
+    .covercard {
+        padding-left: 8%; 
+        padding-right: 8%;
+        padding-top: 0;
+        min-height: 0;
+    }
     .maincard {
-        padding-right: 0;
-        padding-left: 0%;
-        height: 100vh;
-        
+        padding-left: 8%; 
+        padding-right: 8%;
+        padding-top: 0;
+        min-height: 0;
     }
   }
-
-.secondarycard {
-    display: flex;
-    justify-content: center;
-    padding:0%;
-}
 
 .mail {
     font-size: 1.2em;
@@ -320,17 +324,20 @@ a, a:hover {
 
 /*-------------------SVG-------------------*/
 
+.svgcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .greetingsvg {
-    margin-top: 25%;
-    width: 500px; 
-    height: 500px; 
+    width: 30vw; 
+    height: 30vw;
 }
 
 @media screen and (max-width: 1200px) {
     .greetingsvg {
-        margin-top: 25%;
-        width: 300px; 
-        height: 300px; 
+        width: 30vh; 
+        height: 30vh; 
     }
   }
 
