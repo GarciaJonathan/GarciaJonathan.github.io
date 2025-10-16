@@ -219,6 +219,13 @@ a, a:hover {
     z-index: 2 ;
     opacity: 80%;
 }
+
+@media screen and (max-width: 1200px) {
+    #dot-nav {
+        z-index: 0 ;
+    }
+}
+
 #dot-nav a {
     border: 1px solid var(--text);
     border-radius: 50%;
