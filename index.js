@@ -179,9 +179,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       //  nav position
 
-      let navHeight = document.getElementById('dot-nav').clientHeight;
-      let hNavHeight = navHeight / 2;
-      document.getElementById('dot-nav').style.top = 'calc(50% - ' + hNavHeight + 'px)';
+      //let navHeight = document.getElementById('dot-nav').clientHeight;
+      //let hNavHeight = navHeight / 2;
+      //document.getElementById('dot-nav').style.top = 'calc(50% - ' + hNavHeight + 'px)';
 
       //  onscroll
 
