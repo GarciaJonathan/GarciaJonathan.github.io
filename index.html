@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"> 
         <link 
             rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
@@ -13,6 +14,7 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/panelsnap@1.3.0/lib/panelsnap.umd.min.js" defer></script>
         <script src="index.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     
     </head>
     <body>
@@ -25,14 +27,15 @@
 
             <div class ="row">
 
-                <div class="col-sm-0 col-xl-2"></div>
+                <div class="col-sm-0 col-xl-1"></div>
 
-                <div class="col-sm-12 col-xl-5 order-xl-2 covercard svgcontainer">  
-                    <dotlottie-player class="greetingsvg" src="https://lottie.host/032fe89e-0629-4fc0-a5c8-eb614035a9ee/dyZtqIiJrB.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                <div class="col-sm-12 col-xl-5 order-xl-2 covercard" style="align-items: center;"data-aos="fade-left">  
+                    <img src="public/img/logo.png">
+                    <!--<dotlottie-player class="greetingsvg" src="https://lottie.host/032fe89e-0629-4fc0-a5c8-eb614035a9ee/dyZtqIiJrB.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>-->
                 </div>
             
-                <div class="col-sm-12 col-xl-5 order-xl-1 covercard">
-                    <div data-aos="fade-right"><h1><span data-lan="greeting">Hi, I'm Jona</span></h1></div>
+                <div class="col-sm-12 col-xl-6 order-xl-1 covercard">
+                    <div data-aos="fade-right"><h1><span data-lan="greeting">Hi, I'm <p style="color: brown;">Jona</p></span></h1></div>
                     <div data-aos="fade-up">
                         <p><span data-lan="description">Web developer and 3D artist, caught in the crossfire between tech and art. Whenever I see cute dogs on the street I always pet them.</span></p>
                         <div class="row">
@@ -61,180 +64,238 @@
             </div>
         </section>
 
-        <section class="secondary canvas">
+        <section class="secondary canvas d-flex row justify-content-around">
                     
-            <div class="row">
-
-                <div class="col-sm-1 col-xl-2"></div>
-
-                <div class="col-sm-11 col-xl-4 maincard">
-                    <div data-aos="fade-right"><h1><span data-lan="skills">Skills</span></h1></div>
-                    <ul data-aos="fade-up">
-                        <li>Object Oriented Programming</li>
-                        <li>Data Structures & Algorithms</li>
-                        <li>Responsive Design</li>
-                    </ul>
+            <div class="col-sm-11 col-xl-4 maincard">
+                <div data-aos="fade-right"><h1><span data-lan="skills">Skills</span></h1></div>
+                <ul data-aos="fade-up">
+                    <li>Object Oriented Programming</li>
+                    <li>Data Structures & Algorithms</li>
+                    <li>Responsive Design</li>
+                </ul>
+                <div class="svgcontainer" data-aos="fade-up">
                     <dotlottie-player class="skillssvg" src="https://lottie.host/63a07c91-fc63-4511-b175-09f9e42f8cf3/uJZFOpSn2B.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
-        
                 </div>
-
-                <div class="col-sm-1 col-xl-0"></div>
-                
-                <div class="col-sm-11 col-xl-4 maincard">
-                    <div data-aos="fade-right"><h1><span data-lan="stack">Stack</span></h1></div>
-                    <div class="skills-container">
-                        <div data-aos="fade-up" class="skill">
-                            <h2>Frontend</h2>
-                            <ul>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/> Javascript</li>
-                                <!--<li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />  React</li>-->
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" /> Bootstrap</li>
-                                <li><img src="public/img/Three.js_Icon.svg" /> 3js</li>
-                            </ul>
-                        </div>
-                    
-                        <div data-aos="fade-up" class="skill">
-                            <h2>Backend</h2>
-                            <ul>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" /> Python</li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" /> Django</li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" /> MySql</li>
-                            </ul>
-                        </div>
-                    
+            </div>
+            
+            <div class="col-sm-11 col-xl-4 maincard">
+                <div data-aos="fade-right"><h1><span data-lan="stack">Stack</span></h1></div>
+                <div class="skills-container">
+                    <div data-aos="fade-up" class="skill">
+                        <h2>Frontend</h2>
+                        <ul>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/> Javascript</li>
+                            <!--<li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />  React</li>-->
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" /> Bootstrap</li>
+                            <li><img src="public/img/Three.js_Icon.svg" /> 3js</li>
+                        </ul>
                     </div>
-                    <div class=skills-container>
-                        <div data-aos="fade-up"class="skill">
-                            <h2>Source Control</h2>
-                            <ul>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" /> Git</li>
-                            </ul>
-                        </div>
+                
+                    <div data-aos="fade-up" class="skill">
+                        <h2>Backend</h2>
+                        <ul>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" /> Python</li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" /> Django</li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" /> MySql</li>
+                        </ul>
+                    </div>
+                
+                </div>
+                <div class=skills-container>
+                    <div data-aos="fade-up"class="skill">
+                        <h2>Source Control</h2>
+                        <ul>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" /> Git</li>
+                        </ul>
+                    </div>
 
-                        <div data-aos="fade-up"class="skill">
-                            <h2>Design</h2>
-                            <ul>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" /> Blender</li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" /> Photoshop</li>
-                            </ul>
-                        </div>
+                    <div data-aos="fade-up"class="skill">
+                        <h2>Design</h2>
+                        <ul>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" /> Blender</li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" /> Photoshop</li>
+                        </ul>
                     </div>
                 </div>
             </div>        
         </section>
 
-        <section class="primary canvas">
-
-            <div class="row">
-
-                <div class="col-sm-0 col-xl-2"></div>
-
-                <div class="col-sm-12 col-xl-8 maincard">
-                    <div data-aos="fade-right"><h1><span data-lan="projects">Projects</span></h1></div>
-                        <div class="row" data-aos="fade-up">
-                            
-                            <div class="card">
-                                <a href="https://languageassistant.onrender.com/" target="_blank">
-                                    <div class="row">
-                                        <div class="col-md-5 project-image">
-                                        <img src="public/img/language.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-7">
-                                        <div class="card-body">
+        <section class="carousel primary">
+            <div data-aos="fade-right"><h1><span data-lan="projects">Projects</span></h1></div>
+            
+            <div class="main-gallery js-flickity" data-flickity-options='{ "cellAlign": "center", "contain": true }' data-aos="fade-up">
+                <div class="gallery-cell">
+                    <a href="https://languageassistant.onrender.com/" target="_blank">
+                                    <div class="project-item" style="background-image: url(public/img/language.jpg)">
+                                        <div>
                                             <h5 class="card-title">Language Learner</h5>
                                             <p class="card-text" data-lan="project1-description">Ai Chatbot for language learning</p>
                                             <p class="card-text"><small class="text-muted">Python</small></p>
                                         </div>
+                                    </div>
+                                </a>
+                </div>
+                <div class="gallery-cell">
+                    <a href="" target="_blank">
+                                    <div class="project-item" style="background-image: url()">
+                                        <div>
+                                            <h5 class="card-title">Movie Picker</h5>
+                                            <p class="card-text" data-lan="project2-description">Choose wich movie to watch</p>
+                                            <p class="card-text"><small class="text-light">React</small></p>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
-
-                            <div class="card">
-                                <a href="https://www.artstation.com/artwork/PX0nE3" target="_blank">
-                                    <div class="row">
-                                        <div class="col-md-5 project-image">
-                                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/348/243/large/jonathan-garcia-close.jpg?1704984232" alt="...">
-                                        </div>
-                                        <div class="col-md-7">
-                                        <div class="card-body">
+                </div>
+                <div class="gallery-cell">
+                    <a href="https://www.artstation.com/artwork/PX0nE3" target="_blank">
+                                    <div class="project-item" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/071/348/243/large/jonathan-garcia-close.jpg?1704984232)">
+                                        <div>
                                             <h5 class="card-title">3D Projects</h5>
-                                            <p class="card-text" data-lan="project2-description">Collection of 3D projects</p>
-                                            <p class="card-text"><small class="text-muted">Blender, Substance</small></p>
-                                        </div>
+                                            <p class="card-text" data-lan="project3-description">Collection of 3D projects</p>
+                                            <p class="card-text"><small class="text-light">Blender, Substance</small></p>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <div  id="cv" class="row canvas secondary">
+        <section  id="cv" class="secondary canvas d-flex row justify-content-around" style="padding-left: 2vw; padding-right: 2vw;">
             
-            <div class="maincard col-sm-12 col-xl-5">
-                <dotlottie-player class="skillssvg" src="https://lottie.host/0e337640-80c8-4e82-8db8-e406cd899c1d/siWF2JrYFU.lottie" background="transparent" speed="0.5" loop autoplay></dotlottie-player>
-            </div>
-            <div class="maincard col-sm-12 col-xl-7">
+            <div class="maincard col-sm-12 col-xl-6" style="padding-left: 1vw; padding-right: 1vw;">
+                
                 <div data-aos="fade-right"><h1><span data-lan="experience">Experience</span></h1></div>
-                <div class="cv-container" data-aos="fade-up">
-                    <div class="cv-date">
+
+                <div class="row cv-container" data-aos="fade-up">
+                    
+                        <div class="col-xl-2 col-sm-3">
                         2021-2023
                     </div>
-                    <div>
-                        <div class="cv-title"><a><strong>3D Artist & Python Developer</strong></a><a> Union Avatars</a></div>
-                        <ul>
-                            <li>Creation of 3D Assets</li>
-                            <li>Python development</li>
-                        </ul>
+                    <div class="col-xl-5 col-sm-9">
+                        <div class="cv-title">
+                            <strong>3D Artist & Developer</strong></br>
+                            <a> Union Avatars</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-description col-xl-4 col-sm-9">
+                            Creation of 3D Assets, 
+                            frontend with 3js, 
+                            Python development
                     </div>
                     
                 </div>
-                <div class="cv-container" data-aos="fade-up">
-                    <div class="cv-date">
+                <hr data-aos="fade-up">
+
+                <div class="cv-container row" data-aos="fade-up">
+                    <div class="col-xl-2 col-sm-3">
                         2020-2021
                     </div>
-                    <div>
-                        <div class="cv-title"><a><strong>3D Artist</strong></a><a> Uplay Online</a></div>
-                        <ul>
-                            <li>Creation of 3D Assets</li>
-                            <li>Uwu</li>
-                        </ul>
+                    <div class="col-xl-5 col-sm-9">
+                        <div class="cv-title">
+                            <strong>3D Artist</strong></br>
+                            <a> Uplay Online</a>
+                        </div>
                     </div>
                     
+                    <div class="cv-description col-xl-4 col-sm-9">
+                        Creation of 3D Assets, creation of textures, implementation in Unity,
+                    </div>
                 </div>
-                <div class="cv-container" data-aos="fade-up">
-                    <div class="cv-date">
+                <hr data-aos="fade-up">
+
+                <div class="cv-container row" data-aos="fade-up">
+                    <div class="col-xl-2 col-sm-3">
                         2017-2019
                     </div>
-                    <div>
-                        <div class="cv-title"><a><strong>Software Developer</strong></a><a> Zetes Multicom</a></div>
-                        <ul>
-                            <li>Dev</li>
-                            <li>Yep</li>
-                        </ul>
+                    <div class="col-xl-5 col-sm-9">
+                        <div class="cv-title">
+                            <strong>Software Developer</strong></br>
+                            <a> Zetes Multicom</a>
+                        </div>
                     </div>
                     
-                </div>
-                <div class="cv-container" data-aos="fade-up">
-                    <div class="cv-date">
-                        2021-2023
+                    <div class="cv-description col-xl-4 col-sm-9">
+                        Programming of PDA's, installing of solutions, customer support
                     </div>
-                    <div>
-                        <div class="cv-title"><a><strong>SQL Developer</strong></a><a> Atos</a></div>
-                        <ul>
-                            <li>---------</li>
-                            <li>-----------</li>
-                        </ul>
+                </div>
+                <hr data-aos="fade-up">
+
+                <div class="cv-container row" data-aos="fade-up">
+                    <div class="col-xl-2 col-sm-3">
+                        2016-2017
+                    </div>
+                    <div class="col-xl-5 col-sm-9">
+                        <div class="cv-title">
+                            <strong>SQL Developer</strong></br>
+                            <a> Atos</a>
+                        </div>
                     </div>
                     
+                    <div class="cv-description col-xl-4 col-sm-9">
+                        Creation & Management of SQL databases
+                    </div>
                 </div>
+                <hr data-aos="fade-up">
+            </div>
+
+            <div class="maincard col-sm-12 col-xl-6" style="padding-left: 1vw; padding-right: 1vw;">
+                
+                <div data-aos="fade-right"><h1><span data-lan="studies">Studies</span></h1></div>
+
+                <div class="cv-container row" data-aos="fade-up">
+                    <div class="col-xl-2 col-sm-3">
+                        2024-2025
+                    </div>
+                    <div class="col-xl-6 col-sm-9">
+                        <div class="cv-title">
+                            <strong>CS50's Web Programming</strong></br>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-description col-xl-4 col-sm-9">
+                        HarvardX
+                    </div>
+                </div>
+                <hr data-aos="fade-up">
+
+                <div class="cv-container row" data-aos="fade-up">
+                    <div class="col-xl-2 col-sm-3">
+                        2019-2020
+                    </div>
+                    <div class="col-xl-6 col-sm-9">
+                        <div class="cv-title">
+                            <strong>3D Character Modeling</strong></br>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-description col-xl-4 col-sm-9">
+                        Animum 3D School
+                    </div>
+                </div>
+                <hr data-aos="fade-up">
+
+                <div class="cv-container row" data-aos="fade-up">
+                    <div class="col-xl-2 col-sm-3">
+                        2010-2017
+                    </div>
+                    <div class="col-xl-6 col-sm-9">
+                        <div class="cv-title">
+                            <strong>Audiovisual Systems Engineering</strong></br>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="cv-description col-xl-4 col-sm-9">
+                        Universitat Pompeu Fabra
+                    </div>
+                </div>
+                <hr data-aos="fade-up">
             </div>
             
         </div>
 
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             AOS.init({duration: 1500,});

@@ -1,5 +1,5 @@
 
-/*---------------Global Variables---------------*/
+/*-------------------Global---------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -9,7 +9,18 @@ html {
     --color-main: rgb(151, 127, 196);
     --color-secondary: #e9585c;
     --color-background: #eee9e4;
-  }
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 1.5em;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
 
 
 /*-------------------General-------------------*/
@@ -19,13 +30,7 @@ html {
     --color-main: rgb(67, 50, 99);
     --color-secondary: #e9585c;
     --color-background: #303030;
-  }
-
-@media screen and (max-width: 1200px) {
-    html {
-        font-size: 1.5em;
-    }
-  }
+}
 
 body {
     font-family: "Poppins", Helvetica, sans-serif;
@@ -33,6 +38,7 @@ body {
     overflow-x: hidden;
     color:var(--text);
     background-color: var(--color-background);
+    
 }
 
 h1 {
@@ -41,13 +47,6 @@ h1 {
     margin-bottom: 4%;
     color: var(--text);
 }
-
-@media screen and (max-width: 1200px) {
-    h1 {
-        margin-top: 20%;
-        margin-bottom: 5%;
-    }
-  }
 
 button {
     padding:1.5em;
@@ -72,68 +71,29 @@ button:hover {
     margin:0;
 }
 
-.card {
-    margin: 1.3rem;
-    margin-left: 0;
-    margin-right: 0;
-    object-fit: cover;
-    height: 500px;
-    
-}
-
-.project-image {
-    height: 500px;
-    padding: 0;
-}
-
-@media screen and (min-width: 1200px) {
-    .card {
-        margin: 2rem;
-        max-width: 540px;
-        height: 300px;
-    }
-    .project-image {
-        height: 300px;
-        padding: 0;
-    }
-}
-
-.project-image img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    
-}
-
 a, a:hover {
     color: var(--text);
 }
 
-.skills-container ul {
-    list-style-type: none;
-    
-}
-
-.skills-container ul li {
-    margin-left: -2rem;
+ul {
+    list-style-type:square ;
 }
 
 /*-------------------Canvas-------------------*/
 
 .canvas {
-    padding: 0;
-    margin: 0;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    height: 100dvh;
+    overflow-x: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    justify-items: center;
-    min-height: 100vh;
-
+    justify-content: center;
+    align-content: start;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .canvas {
-        height: 100dvh;
+        min-height: 100vh;
     }
   }
 
@@ -145,44 +105,18 @@ a, a:hover {
     background-color: var(--color-main);
 }
 
-.covercard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    min-height: 100vh;
-}
-
 .maincard {
     padding: 0;
-    padding-top: 7%;
-    min-height: 100vh;
+    padding-top: 10rem;
 }
 
 @media screen and (max-width: 1200px) {
-    .covercard {
-        padding-left: 8%; 
-        padding-right: 8%;
-        padding-top: 0;
-        min-height: 0;
-    }
     .maincard {
-        padding-left: 8%; 
-        padding-right: 8%;
-        padding-top: 0;
-        min-height: 0;
+        padding-top: 5rem;
     }
-  }
-
-.mail {
-    font-size: 1.2em;
 }
 
-@media screen and (max-width: 1200px) {
-    .mail {
-        margin-bottom: 1.3em;
-    }
-  }
+/*-------------------Navs-------------------*/
 
 .languageswitch {
     margin: 0.5em;
@@ -192,7 +126,6 @@ a, a:hover {
 .languageswitch:hover {
     cursor: pointer;
     text-decoration: underline;
-    
 }
 
 .langnav {
@@ -207,7 +140,7 @@ a, a:hover {
     .langnav {
         font-size: 1.3em;
     }
-  }
+}
 
 #dot-nav {
     position: fixed;
@@ -222,6 +155,7 @@ a, a:hover {
 
 @media screen and (max-width: 1200px) {
     #dot-nav {
+        display: none;
         z-index: 0 ;
     }
 }
@@ -241,50 +175,26 @@ a, a:hover {
     height: 0.8rem;
 }
 
-.skills-container {
+/*-------------------Cover-Section-------------------*/
+
+.covercard {
     display: flex;
-    flex: row;
-    align-content: space-around;
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
 }
 
-.skills-container img {
-    width: 2rem;
-    height: 2rem;
-    margin: 0.5rem;
+.covercard img {
+    height: 50vh;
+    width: 50vh;
 }
 
-.skill {
-    width: 18rem;
+@media screen and (max-width: 1200px) {
+    .covercard img {
+        height: 30vh;
+        width: 30vh;
+    }
 }
-
-.cv-title {
-    display: flex;
-    align-items: center;
-    width: 35vw;
-    height: 3rem;
-    justify-content: space-between;
-}
-
-.cv-container {
-    display: flex;
-    margin: 0.2rem;
-    font-size: 0.8em;
-}
-
-.cv-container strong {
-    font-size: 1.2em;
-}
-
-.cv-date {
-    display: flex;
-    align-items: center;
-    width: 10vw;
-    height: 3rem;
-}
-
-/*-------------------Icons-------------------*/
 
 .icons-container {
     display: flex;
@@ -302,12 +212,6 @@ a, a:hover {
     min-width: 75px;
 }
 
-@media screen and (max-width: 1200px) {
-    .icon-link {
-        min-width: 90px;
-    }
-  }
-
 .icon-link img {
     height: 50px;
     width: 50px;
@@ -315,6 +219,9 @@ a, a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+    .icon-link {
+        min-width: 90px;
+    }
     .icon-link img {
         height: 70px;
         width: 70px;
@@ -352,7 +259,145 @@ a, a:hover {
         width: 80px;
         height: 80px;
       }
-  }
+}
+
+.mail {
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 1200px) {
+    .mail {
+        margin-bottom: 1.3em;
+    }
+}
+
+/*-------------------Skills-Section-------------------*/
+
+.skills-container {
+    display: flex;
+    flex: row;
+    align-content: space-around;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+.skills-container img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
+}
+
+.skill {
+    width: 18rem;
+}
+
+.skills-container ul {
+    list-style-type: none;
+}
+
+/*-------------------Projects-Section-------------------*/
+
+.flickity-prev-next-button {
+    display: none;
+}
+.carousel {
+    display: block; 
+    padding-top: 7%; 
+    padding-left: 0; 
+    padding-right: 0;
+    height: 100dvh;
+}
+
+.carousel h1 {
+    margin-left: 15vw;
+}
+
+.flickity-page-dots {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel {
+      padding-top: 30%;
+      min-height: 100vh;   
+    }
+    .carousel h1 {
+        margin-left: 10vw;
+    }
+
+    .flickity-page-dots {
+        display: block;
+    }
+}
+
+.project-item {
+    padding: 1rem;
+    background-color: var(--text);
+    border-radius: 1rem;
+    background-size: cover;
+    height: 25rem;
+    width: 20rem;
+    margin: 2rem;
+    display: flex;
+    align-items: end;
+}
+
+.project-item div {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(240, 248, 255, 0.397);
+    backdrop-filter: blur(6px);
+    height: 12rem;
+    width: 23rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .project-item {
+        height: 40rem;
+        width: 30rem;
+    }
+
+    .project-item div {
+        height: 16rem;
+        width: 28rem;
+    }
+}
+
+.project-item:hover {
+    cursor: pointer;
+    background-color: rgb(95, 95, 95);
+    background-blend-mode: lighten;
+}
+
+
+/*-------------------CV-Section-------------------*/
+
+.cv-container {
+    display: flex;
+    font-size: 1vw;
+    align-items: center; 
+    height: 5rem; 
+}
+
+@media screen and (max-width: 1200px){
+    .cv-container {
+        height: 6.5rem; 
+        font-size: 1.5rem;
+    }
+    .cv-container a {
+        display: none;
+    }
+
+    .cv-description {
+        margin-left: 25vw;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 1200px) {
+    hr {
+        background-color: #5f3f99;
+    }
+}
 
 /*-------------------SVG-------------------*/
 
@@ -360,35 +405,18 @@ a, a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 2rem;
 }
-.greetingsvg {
-    width: 30vw; 
-    height: 30vw;
-}
-
-@media screen and (max-width: 1200px) {
-    .greetingsvg {
-        width: 30vh; 
-        height: 30vh; 
-    }
-  }
 
 .skillssvg {
-    margin-top: 10%;
-    margin-left: 10%;
     width: 300px; 
     height: 300px; 
 }
 
 @media screen and (max-width: 1200px) {
     .skillssvg {
-        width: 400px; 
-        height: 400px; 
-        margin-left: 20%;
+        width: 450px; 
+        height: 450px; 
     }
-  }
+}
 
-
-  #cv {
-    display: none
-  }

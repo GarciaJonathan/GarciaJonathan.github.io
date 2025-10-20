@@ -45,27 +45,31 @@ document.addEventListener("DOMContentLoaded", function () {
 const json =
 {   
     "Eng":{
-        "greeting": "Hi, I'm Jona",
+        "greeting": `Hi, I'm <span style="color: #e9585c;">Jona</span>`,
         "description": "Web developer and 3D artist, caught in the crossfire between tech and art. Whenever I see cute dogs on the street I always pet them.",
         "cv-button": "DOWNLOAD MY CV",
         "skills": "Skills",
         "stack": "Stack",
         "projects": "Projects",
         "experience": "Experience",
+        "studies": "Studies",
         "project1-description": "Ai Chatbot for language learning",
-        "project2-description": "Collection of 3D projects"
+        "project2-description": "Choose wich movie to watch",
+        "project3-description": "Collection of 3D projects"
     },
 
     "Cat":{
-        "greeting": "Ei, s&oacute;c en Jona",
-        "description": "Desenvolupador web i artista 3D, atrapat entre tecnologia i art. Sempre saludo els gossets que veig pel carrer.",
+        "greeting": `Ei, sóc en <span style="color: #e9585c;">Jona</span>`,
+        "description": "Desenvolupador web i artista 3D, atrapat entre tecnologia i art. Quan veig gossets pel carrer sempre els saludo.",
         "cv-button": "DESCARREGA CV",
         "skills": "Habilitats",
         "stack": "Tecnologies",
         "projects": "Projectes",
         "experience": "Experiencia",
+        "studies": "Estudis",
         "project1-description": "Bot de xat per aprendre idiomes",
-        "project2-description": "Col&sdot;lecci&oacute; de projectes 3D"
+        "project2-description": "Escull quina pel·lícula mirar",
+        "project3-description": "Col·lecció de projectes 3D"
     }
     
 };
