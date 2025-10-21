@@ -84,16 +84,17 @@ ul {
 .canvas {
     padding-left: 7vw;
     padding-right: 7vw;
-    height: 100dvh;
-    overflow-x: hidden;
+    padding-bottom: 7vh;
+    padding-top: 7vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-content: start;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .canvas {
-        min-height: 100vh;
+       height: 100dvh; 
     }
   }
 
@@ -107,12 +108,11 @@ ul {
 
 .maincard {
     padding: 0;
-    padding-top: 10rem;
 }
 
 @media screen and (max-width: 1200px) {
     .maincard {
-        padding-top: 5rem;
+        padding-top: 2rem;
     }
 }
 
