@@ -108,6 +108,7 @@ ul {
 
 .maincard {
     padding: 0;
+    padding-top: 7vh;
 }
 
 @media screen and (max-width: 1200px) {
@@ -374,7 +375,7 @@ ul {
 
 .cv-container {
     display: flex;
-    font-size: 1vw;
+    font-size: 0.9vw;
     align-items: center; 
     height: 5rem; 
 }
