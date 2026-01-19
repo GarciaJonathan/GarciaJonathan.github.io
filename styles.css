@@ -185,13 +185,20 @@ ul {
     padding: 0;
 }
 
-.covercard img {
+#profile_pic {
     height: 50vh;
     width: 50vh;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+
+#profile_pic:hover {
+    transform: scale(1.2);
+    border-radius: 30%;
 }
 
 @media screen and (max-width: 1200px) {
-    .covercard img {
+    #profile_pic {
         height: 30vh;
         width: 30vh;
     }
