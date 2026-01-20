@@ -55,7 +55,8 @@ const json =
         "studies": "Studies",
         "project1-description": "Ai Chatbot for language learning",
         "project2-description": "Choose wich movie to watch",
-        "project3-description": "Collection of 3D projects"
+        "project3-description": "Collection of 3D projects",
+        "cv-file": "../public/CV_JonathanGarcia_Eng.pdf"
     },
 
     "Cat":{
@@ -69,7 +70,8 @@ const json =
         "studies": "Estudis",
         "project1-description": "Bot de xat per aprendre idiomes",
         "project2-description": "Escull quina pel·lícula mirar",
-        "project3-description": "Col·lecció de projectes 3D"
+        "project3-description": "Col·lecció de projectes 3D",
+        "cv-file": "../public/CV_JonathanGarcia_Cat.pdf"
     }
     
 };
@@ -79,7 +81,9 @@ function updateLanguage(language) {
     document.querySelectorAll('[data-lan]').forEach(element => {
         const key = element.getAttribute('data-lan');
         element.innerHTML = json[language][key];
-    });   
+    }); 
+    cvButton = document.getElementById('cv-button');
+    cvButton.href = json[language]["cv-file"];
     localStorage.setItem('language', language) 
 }
 
